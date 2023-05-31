@@ -1,5 +1,3 @@
-
-
 export default function ArtPiecesPreview( { image, title, artists }) {
 
 return <div>
