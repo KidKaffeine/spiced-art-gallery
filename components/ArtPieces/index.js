@@ -1,19 +1,34 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import useSWR from "swr";
+import Image from "next/image";
 
-export default function ArtPieces ( { pieces } ) {
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+export default function ArtPieces() {
+  const URL = `https://example-apis.vercel.app/api/art`;
 
-return <>
-        {/* <ul>
-            {pieces.map((piece) => (
-                <li key={piece.slug}>
-                <h3>{piece.artist}</h3>
-                <Link href={`/pieces/${piece.slug}`}>
-                <Image src={piece.imageSource} alt={piece.name} width={300} height={150}/>    
-                <small>{piece.name}</small>
-                </Link>
-        </li>   
-    ))} 
-</ul> */}
-</>
+  const { data, error, isLoading } = useSWR(URL, fetcher);
+
+  if (!data) return <div> No data</div>;
+  if (error) return <div> Error</div>;
+  if (isLoading) return <div> Loading data</div>;
+
+  return (
+    <div>
+      <h1> Art Pieces </h1>
+      <ul>
+        {data.map((element) => (
+          <li key={element.slug} role="list">
+            <h3 role="heading">{element.artist}</h3>
+            <Image
+              src={element.imageSource}
+              alt={element.name}
+              width={300}
+              height={150}
+              role="image"
+            />
+            <small role="small">{element.name}</small>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
