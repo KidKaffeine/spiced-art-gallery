@@ -1,0 +1,16 @@
+.galeryContainer {
+background-color: antiquewhite;
+}
+
+.galleryList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.galleryListItem {
+    display: flex;
+    flex-direction: column;
+
+}
