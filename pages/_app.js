@@ -5,6 +5,8 @@ import useSWR from "swr";
 import { useState } from "react";
 import { useImmer } from "use-immer";
 
+
+
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
@@ -27,6 +29,7 @@ export default function App({ Component, pageProps }) {
       setIsFavorite((isFavorite) => [...isFavorite, addedArray]);
     }
   }
+
   return (
     <>
       <GlobalStyle />
