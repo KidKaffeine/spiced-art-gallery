@@ -1,10 +1,9 @@
 import useSWR from "swr";
 import Image from "next/image";
 import Link from "next/link";
-import FavoriteButton from "../FavoriteButton/index"
+import FavoriteButton from "../FavoriteButton/index";
 
-export default function ArtPieces( {pieces}) {
-
+export default function ArtPieces({ pieces, handleFavorite, isFavorite }) {
   return (
     <div>
       <ul>
@@ -12,15 +11,19 @@ export default function ArtPieces( {pieces}) {
           <li key={element.slug} role="list">
             <h3 role="heading">{element.artist}</h3>
             <Link href={`/pieces/${element.slug}`}>
-            <Image
-              src={element.imageSource}
-              alt={element.name}
-              width={300}
-              height={150}
-              role="image"
-            />
+              <Image
+                src={element.imageSource}
+                alt={element.name}
+                width={300}
+                height={150}
+                role="image"
+              />
             </Link>
-            <FavoriteButton />
+            <FavoriteButton
+              handleFavorite={handleFavorite}
+              isFavorite={isFavorite}
+              id={element.slug}
+            />
             <small role="small">{element.name}</small>
           </li>
         ))}
