@@ -1,17 +1,12 @@
 import useSWR from "swr";
 import Image from "next/image";
+import FavoriteButton from "../FavoriteButton";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-export default function Spotlight({ image, artist }) {
-  const URL = `https://example-apis.vercel.app/api/art`;
-
-  const { data, error, isLoading } = useSWR(URL, fetcher);
-  if (error) return <div>error</div>;
-  if (isLoading) return <div>Loading Page...</div>;
-
-  let rand = Math.floor(Math.random() * data.length);
-  let randomPiece = data[rand];
+export default function Spotlight({ pieces }) {
+ 
+  let rand = Math.floor(Math.random() * pieces.length);
+  let randomPiece = pieces[rand];
 
   return (
     <>
@@ -23,6 +18,7 @@ export default function Spotlight({ image, artist }) {
         width={300}
         height={150}
       />
+      <FavoriteButton/>
     </>
   );
 }
