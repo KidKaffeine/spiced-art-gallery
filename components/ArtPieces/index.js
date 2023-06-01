@@ -1,21 +1,14 @@
 import useSWR from "swr";
 import Image from "next/image";
 import Link from "next/link";
+import FavoriteButton from "../FavoriteButton/index"
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
-export default function ArtPieces() {
-  const URL = `https://example-apis.vercel.app/api/art`;
-
-  const { data, error, isLoading } = useSWR(URL, fetcher);
-
-  if (!data) return <div> No data</div>;
-  if (error) return <div> Error</div>;
-  if (isLoading) return <div> Loading data</div>;
+export default function ArtPieces( {pieces}) {
 
   return (
     <div>
       <ul>
-        {data.map((element) => (
+        {pieces.map((element) => (
           <li key={element.slug} role="list">
             <h3 role="heading">{element.artist}</h3>
             <Link href={`/pieces/${element.slug}`}>
@@ -27,6 +20,7 @@ export default function ArtPieces() {
               role="image"
             />
             </Link>
+            <FavoriteButton />
             <small role="small">{element.name}</small>
           </li>
         ))}
