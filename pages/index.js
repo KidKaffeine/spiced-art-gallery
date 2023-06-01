@@ -1,13 +1,11 @@
 import Navbar from "../components/NavBar";
-import Spotlight from '../components/Spotlight'
+import Spotlight from "../components/Spotlight";
 
-export default function HomePage({pieces}) {
-
+export default function HomePage(props) {
   return (
-<>
-  <Spotlight pieces={pieces}/>
-    <Navbar/>
- </>
+    <>
+      <Spotlight {...props} />
+      <Navbar />
+    </>
   );
 }
-
