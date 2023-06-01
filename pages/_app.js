@@ -4,6 +4,8 @@ import Layout from "../components/Layout ";
 import useSWR from "swr";
 import { useState } from "react";
 
+
+
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
@@ -24,16 +26,15 @@ export default function App({ Component, pageProps }) {
     console.log(isFavorite);
   }
 
+
   return (
     <>
       <GlobalStyle />
-      <Layout>
-        <SWRConfig
-          value={{
-            fetcher,
-            refreshInterval: 1000,
-          }}
-        >
+      <Layout >
+      <SWRConfig value={{
+        fetcher, 
+        refreshInterval: 1000,
+      }}>
           <Component
             {...pageProps}
             pieces={data}
