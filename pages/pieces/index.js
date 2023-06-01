@@ -1,5 +1,5 @@
-import ArtPieces from '../components/ArtPieces/index.js'
-import Navbar from '../components/NavBar/index.js'
+import ArtPieces from '/components/ArtPieces/index.js'
+import Navbar from '/components/NavBar/index.js'
 
 
 export default function Pieces () {

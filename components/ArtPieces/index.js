@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import Image from "next/image";
+import Link from "next/link";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 export default function ArtPieces() {
@@ -13,11 +14,11 @@ export default function ArtPieces() {
 
   return (
     <div>
-      <h1> Art Pieces </h1>
       <ul>
         {data.map((element) => (
           <li key={element.slug} role="list">
             <h3 role="heading">{element.artist}</h3>
+            <Link href={`/pieces/${element.slug}`}>
             <Image
               src={element.imageSource}
               alt={element.name}
@@ -25,6 +26,7 @@ export default function ArtPieces() {
               height={150}
               role="image"
             />
+            </Link>
             <small role="small">{element.name}</small>
           </li>
         ))}
