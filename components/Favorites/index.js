@@ -1,6 +1,33 @@
-export default function Favorites ({pieces}) {
-return <div>
-    <h1>Favorites</h1>
-</div>
+import Link from "next/link";
+import Image from "next/image";
+import FavoriteButton from "../FavoriteButton";
 
+export default function Favorites({ handleFavorite, isFavorite }) {
+  console.log(isFavorite);
+  return (
+    <div>
+      <ul>
+        {isFavorite.map((element) => (
+          <li key={element.slug} role="list">
+            <h3 role="heading">{element.artist}</h3>
+            <Link href={`/pieces/${element.slug}`}>
+              <Image
+                src={element.imageSource}
+                alt={element.name}
+                width={300}
+                height={150}
+                role="image"
+              />
+            </Link>
+            <FavoriteButton
+              handleFavorite={handleFavorite}
+              isFavorite={isFavorite}
+              id={element.slug}
+            />
+            <small role="small">{element.name}</small>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }

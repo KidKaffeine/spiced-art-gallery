@@ -3,6 +3,8 @@ import Link from "next/link";
 import FavoriteButton from "../FavoriteButton/index";
 
 export default function ArtPieces({ pieces, handleFavorite, isFavorite }) {
+  console.log(isFavorite);
+
   return (
     <div>
       <ul>

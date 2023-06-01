@@ -1,10 +1,12 @@
 import Favorites from "../components/Favorites";
 import Navbar from "../components/NavBar";
 
-export default function Favorite ({pieces}) {
-
-return <>
-<Favorites pieces={pieces}/>
-<Navbar/>
-</>
+export default function Favorite(props) {
+  return (
+    <>
+      <Favorites {...props} />
+      <Navbar />
+    </>
+  );
 }
+

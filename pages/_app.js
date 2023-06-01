@@ -3,6 +3,7 @@ import { SWRConfig } from "swr";
 import Layout from "../components/Layout ";
 import useSWR from "swr";
 import { useState } from "react";
+import { useImmer } from "use-immer";
 
 
 
@@ -21,20 +22,23 @@ export default function App({ Component, pageProps }) {
   if (isLoading) return <div> Is loading</div>;
 
   function handleFavorite(id) {
-    let addedArray = data.filter((piece) => piece.slug === id)[0];
-    setIsFavorite(isFavorite.push(addedArray));
-    console.log(isFavorite);
+    const addedArray = data.filter((piece) => piece.slug === id)[0];
+    if (isFavorite.includes(addedArray)) {
+      setIsFavorite(isFavorite.filter((piece) => piece !== addedArray));
+    } else {
+      setIsFavorite((isFavorite) => [...isFavorite, addedArray]);
+    }
   }
-
 
   return (
     <>
       <GlobalStyle />
-      <Layout >
-      <SWRConfig value={{
-        fetcher, 
-        refreshInterval: 1000,
-      }}>
+      <Layout>
+        <SWRConfig
+          value={{
+            fetcher,
+          }}
+        >
           <Component
             {...pageProps}
             pieces={data}
