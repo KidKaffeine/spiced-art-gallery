@@ -1,7 +1,6 @@
-import useSWR from "swr";
 import Image from "next/image";
 import FavoriteButton from "../FavoriteButton";
-
+import { StyledHeader, StyledDiv } from "./Spotlight.styled";
 
 export default function Spotlight({ pieces }) {
  
@@ -10,15 +9,19 @@ export default function Spotlight({ pieces }) {
 
   return (
     <>
+  <StyledDiv>
+    <StyledHeader>
       <h3 role="header">{randomPiece.artist}</h3>
+      </StyledHeader>
       <Image
         role="image"
         src={randomPiece.imageSource}
         alt={randomPiece.name}
         width={300}
-        height={150}
+        height={300}
       />
       <FavoriteButton/>
+      </StyledDiv>
     </>
   );
 }
