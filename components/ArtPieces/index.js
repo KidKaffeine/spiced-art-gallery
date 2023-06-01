@@ -6,6 +6,7 @@ import styles from './ArtPieces.module.css'
 export default function ArtPieces({ pieces, handleFavorite, isFavorite }) {
   return (
     <div className={styles.galleryContainer}>
+      <h1 className={styles.galleryHeader}>Art Gallery</h1>
       <ul className={styles.galleryList}>
         {pieces.map((element) => (
           <li key={element.slug} role="list" className={styles.galleryListItem}>
@@ -14,8 +15,8 @@ export default function ArtPieces({ pieces, handleFavorite, isFavorite }) {
               <Image
                 src={element.imageSource}
                 alt={element.name}
-                width={300}
-                height={150}
+                width={250}
+                height={200}
                 role="image"
               />
             </Link>
@@ -24,7 +25,7 @@ export default function ArtPieces({ pieces, handleFavorite, isFavorite }) {
               isFavorite={isFavorite}
               id={element.slug}
             />
-            <small role="small">{element.name}</small>
+            <small role="small" className={styles.caption}>{element.name}</small>
           </li>
         ))}
       </ul>
