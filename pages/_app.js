@@ -4,6 +4,8 @@ import Layout from "../components/Layout ";
 import useSWR from "swr";
 import { useState } from "react";
 
+
+
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
@@ -24,14 +26,15 @@ export default function App({ Component, pageProps }) {
       if (piece) {
         return artPiecesInfo.map((piece) => {
           return piece.slug === slug
-            ? { ...piece, isFavorite: !piece.isFavorite }
+            ? { ...piece, isFavorite: !piece.isFavorite}
             : piece;
         });
       }
-      return [...artPiecesInfo, { slug, isFavorite: true }];
+      return [...artPiecesInfo, { slug, isFavorite: "true" }];
     });
   }
 
+  console.log(artPiecesInfo)
   function handleComments(slug, comment) {
     setArtPiecesInfo((artPiecesInfo) => {
       const piece = artPiecesInfo.filter((piece) => piece.slug === slug)[0];

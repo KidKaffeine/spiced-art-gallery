@@ -54,6 +54,11 @@ border-radius: 10px;
 margin: 20px;
 }
 
+.backLink a {
+color: pink;
+margin: 50px;
+}
+
 @media (max-width: 768px) {
     .galleryListItem {
         width: 90%;

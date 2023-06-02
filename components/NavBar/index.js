@@ -21,7 +21,6 @@ export default function Navbar() {
           style={{
             textDecoration: "none",
             fontSize: 20,
-            border: "1px",
             color: "white",
           }}
         >
@@ -41,5 +40,5 @@ export default function Navbar() {
         </Link>
       </div>
     </>
-  ;
+  );
 }
