@@ -1,9 +1,10 @@
+import useSWR from "swr";
 import Image from "next/image";
 import Link from "next/link";
 import FavoriteButton from "../FavoriteButton/index";
 
-export default function ArtPieces({ pieces, handleFavorite, isFavorite }) {
-  console.log(isFavorite);
+export default function ArtPieces({ pieces, handleFavorite, artPiecesInfo }) {
+  console.log(artPiecesInfo);
 
   return (
     <div>
@@ -22,7 +23,7 @@ export default function ArtPieces({ pieces, handleFavorite, isFavorite }) {
             </Link>
             <FavoriteButton
               handleFavorite={handleFavorite}
-              isFavorite={isFavorite}
+              artPiecesInfo={artPiecesInfo}
               id={element.slug}
             />
             <small role="small">{element.name}</small>

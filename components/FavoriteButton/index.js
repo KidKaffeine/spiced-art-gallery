@@ -1,4 +1,4 @@
-export default function FavoriteButton({ isFavorite, handleFavorite, id }) {
+export default function FavoriteButton({ artPiecesInfo, handleFavorite, id }) {
   return (
     <button
       type="button"
@@ -6,7 +6,7 @@ export default function FavoriteButton({ isFavorite, handleFavorite, id }) {
         handleFavorite(id);
       }}
     >
-      {isFavorite ? "YES" : "NO"}
+      {artPiecesInfo ? "YES" : "NO"}
     </button>
   );
 }
