@@ -1,4 +1,3 @@
-import useSWR from "swr";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import FavoriteButton from "../../components/FavoriteButton";
@@ -11,8 +10,8 @@ export default function ArtPieces({ pieces, handleFavorite, artPiecesInfo }) {
 
   const piece = pieces.filter((e) => e.slug === slug)[0];
   return (
-    <div>
-      <h3>{piece.artist}</h3>
+    <div className={styles.singlePieceContainer}>
+      <h3 className={styles.pieceHeader}>{piece.artist}</h3>
       <Image
         src={piece.imageSource}
         alt={piece.name}

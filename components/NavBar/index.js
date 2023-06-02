@@ -23,5 +23,5 @@ return <>
             }}> Favorites </Link>
 </div>
     </>
-  );
+  ;
 }
