@@ -1,6 +1,7 @@
 import styles from './FavoriteButton.module.css';
 
-export default function FavoriteButton({ isFavorite, handleFavorite, id }) {
+export default function FavoriteButton({ artPiecesInfo, handleFavorite, id }) {
+
   return (
     <button
       type="button"
@@ -9,7 +10,7 @@ export default function FavoriteButton({ isFavorite, handleFavorite, id }) {
       }}
       className={styles.favoriteButton}
     >
-      {isFavorite ? "YES" : "NO"}
+      {artPiecesInfo ? "YES" : "NO"}
     </button>
   );
 }

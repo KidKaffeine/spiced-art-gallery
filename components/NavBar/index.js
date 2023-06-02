@@ -1,3 +1,4 @@
+
 import Link from "next/link"
 import styles from './Navbar.module.css'
 
@@ -22,4 +23,5 @@ return <>
             }}> Favorites </Link>
 </div>
     </>
+  );
 }

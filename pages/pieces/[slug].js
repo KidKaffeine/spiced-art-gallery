@@ -2,8 +2,10 @@ import useSWR from "swr";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import FavoriteButton from "../../components/FavoriteButton";
+import Comment from "../../components/Comment";
+import Link from "next/link";
 
-export default function ArtPieces({ pieces, handleFavorite, isFavorite }) {
+export default function ArtPieces({ pieces, handleFavorite, artPiecesInfo }) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -20,7 +22,12 @@ export default function ArtPieces({ pieces, handleFavorite, isFavorite }) {
       <small>{piece.name}</small>
       <small>{piece.genre}</small>
       <small>{piece.year}</small>
-      <FavoriteButton handleFavorite={handleFavorite} isFavorite={isFavorite} />
+      <FavoriteButton
+        handleFavorite={handleFavorite}
+        artPiecesInfo={artPiecesInfo}
+      />
+      <Link href="/comment">Add new comment...</Link>
+      <Comment slug={slug} artPiecesInfo={artPiecesInfo} />
     </div>
   );
 }
