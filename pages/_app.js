@@ -44,7 +44,7 @@ export default function App({ Component, pageProps }) {
       return [...artPiecesInfo, { slug, comments: [comment] }];
     });
   }
-  console.log(artPiecesInfo);
+
 
   return (
     <>

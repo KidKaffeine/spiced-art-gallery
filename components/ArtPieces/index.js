@@ -27,7 +27,7 @@ export default function ArtPieces({ pieces, handleFavorite, artPiecesInfo }) {
             <FavoriteButton
               handleFavorite={handleFavorite}
               artPiecesInfo={artPiecesInfo}
-              id={element.slug}
+              slug={element.slug}
             />
             <small role="small" className={styles.caption}>{element.name}</small>
           <small>{element.year}</small>

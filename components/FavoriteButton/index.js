@@ -15,7 +15,7 @@ export default function FavoriteButton({
       }}
       className={styles.favoriteButton}
     >
-      {artPiecesInfo ? "YES" : "NO"}
+      {artPiecesInfo ? "Unsave" : "Save"}
     </button>
   );
 }
