@@ -28,38 +28,6 @@ export default function App({ Component, pageProps }) {
   //   }
   // }
 
-  // function handleFavorite(slug) {
-  //   const addedArray = data.filter((piece) => piece.slug === slug)[0];
-  //   if (addedArray.isFav == true) {
-  //     setIsFavorite(
-  //       data.map((piece) =>
-  //         piece.slug === slug
-  //           ? {
-  //               ...piece,
-  //               isFav: false,
-  //             }
-  //           : piece
-  //       )
-  //     );
-  //   } else {
-  //     setIsFavorite(
-  //       data.map((piece) =>
-  //         piece.slug === slug
-  //           ? {
-  //               ...piece,
-  //               isFav: true,
-  //             }
-  //           : piece
-  //       )
-  //     );
-  //   }
-  // }
-
-  // handleFavorite((draft) => {
-  //   const piece = draft.find((piece) => piece.slug === slug);
-  //   piece.isFavorite = !isFavorite;
-  // });
-
   function handleFavorite(slug) {
     setArtPiecesInfo((artPiecesInfo) => {
       const piece = artPiecesInfo.filter((piece) => piece.slug === slug)[0];
@@ -83,6 +51,8 @@ export default function App({ Component, pageProps }) {
       return [...artPiecesInfo, { slug, comments: [comment] }];
     });
   }
+  console.log(artPiecesInfo);
+
   return (
     <>
       <GlobalStyle />
