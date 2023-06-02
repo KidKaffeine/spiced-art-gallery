@@ -10,8 +10,9 @@ export default function ArtPieces({ pieces, handleFavorite, isFavorite }) {
       <ul className={styles.galleryList}>
         {pieces.map((element) => (
           <li key={element.slug} role="list" className={styles.galleryListItem}>
-            <h3 role="heading">{element.artist}</h3>
+            <h3 role="heading" className={styles.pieceHeader}>{element.artist}</h3>
             <Link href={`/pieces/${element.slug}`}>
+              <div className={styles.imageContainer}v>
               <Image
                 src={element.imageSource}
                 alt={element.name}
@@ -19,6 +20,7 @@ export default function ArtPieces({ pieces, handleFavorite, isFavorite }) {
                 height={200}
                 role="image"
               />
+              </div>
             </Link>
             <FavoriteButton
               handleFavorite={handleFavorite}

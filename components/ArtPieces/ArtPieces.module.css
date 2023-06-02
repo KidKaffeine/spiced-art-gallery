@@ -1,7 +1,12 @@
-.galleryConatainer {
+.galleryContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.galleryHeader {
+    text-align: center;
+    margin-top: 50px;
 }
 
 .galleryList {
@@ -9,7 +14,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rebeccapurple;
+    padding: 0px;
 }
 
 .galleryListItem {
@@ -21,12 +26,15 @@
     margin-block: 15px;
     width: 50%;
     border-radius: 10px;
-    background-color: aqua;
 }
 
-.galleryHeader {
-    text-align: center;
-    margin-top: 50px;
+.pieceHeader {
+    margin: 0;
+}
+
+.imageContainer img {
+ border-radius: 10px;
+ margin: 20px;
 }
 
 .caption {
@@ -37,5 +45,4 @@
     .galleryListItem {
         width: 100%;
     }
-
 }

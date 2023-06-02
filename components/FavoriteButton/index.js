@@ -7,7 +7,7 @@ export default function FavoriteButton({ isFavorite, handleFavorite, id }) {
       onClick={() => {
         handleFavorite(id);
       }}
-      className={styles.FavoriteButton}
+      className={styles.favoriteButton}
     >
       {isFavorite ? "YES" : "NO"}
     </button>

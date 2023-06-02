@@ -6,16 +6,19 @@ return <>
 <div className={styles.Navbar}>
  <Link href="/" style={{
               textDecoration: 'none',
-              fontSize: 22,
+              fontSize: 20,
+              color: 'white',
             }}> Homepage </Link>
  <Link href="/pieces" style={{
               textDecoration: 'none',
-               fontSize: 22,
-                border: '1px'
+               fontSize: 20,
+                border: '1px',
+                color: 'white',
             }}> Art Pieces </Link>
  <Link href="/favorites" style={{
               textDecoration: 'none',
-              fontSize: 22,
+              fontSize: 20,
+              color: 'white',
             }}> Favorites </Link>
 </div>
     </>
