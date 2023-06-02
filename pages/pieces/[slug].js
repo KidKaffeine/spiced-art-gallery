@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import FavoriteButton from "../../components/FavoriteButton";
 import Comment from "../../components/Comment";
 import Link from "next/link";
+import styles from '../../components/ArtPieces/ArtPieces.module.css'
 
 export default function ArtPieces({
   pieces,
@@ -17,13 +18,15 @@ export default function ArtPieces({
 
   return (
     <div className={styles.singlePieceContainer}>
-      <h3 className={styles.pieceHeader}>{piece.artist}</h3>
+      <h1 className={styles.pieceHeader}>{piece.artist}</h1>
+      <div className={styles.singlePieceImage}>
       <Image
         src={piece.imageSource}
         alt={piece.name}
         width={300}
         height={150}
       />
+      </div>
       <small>{piece.name}</small>
       <small>{piece.genre}</small>
       <small>{piece.year}</small>
@@ -31,11 +34,17 @@ export default function ArtPieces({
         handleFavorite={handleFavorite}
         artPiecesInfo={artPiecesInfo}
       />
-      <Comment
-        slug={slug}
-        artPiecesInfo={artPiecesInfo}
-        handleComments={handleComments}
-      />
+      <Link href="/comment" style={{
+        textDecoration: 'none',
+        color: 'black',
+      }} >Add new comment
+      </Link>
+      <Link href="/" style={{
+        textDecoration: 'none',
+        color: 'black',
+      }}>Back
+      </Link>
+      <Comment slug={slug} artPiecesInfo={artPiecesInfo} handleComments={handleComments} />
     </div>
   );
 }

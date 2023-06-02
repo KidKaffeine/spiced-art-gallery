@@ -38,6 +38,22 @@ border-radius: 10px;
 font-weight: bold;
 }
 
+.singlePieceContainer {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.pieceHeader {
+margin-top: 50px;
+}
+
+.singlePieceContainer img {
+border-radius: 10px;
+margin: 20px;
+}
+
 @media (max-width: 768px) {
     .galleryListItem {
         width: 90%;
