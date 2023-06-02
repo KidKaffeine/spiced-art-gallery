@@ -1,22 +1,27 @@
-import Link from "next/link";
 
-export default function Navbar() {
-  return (
-    <>
-      <ul>
-        <li>
-          <Link href="/"> Homepage </Link>
-        </li>
-        <li>
-          <Link href="/pieces"> Art Pieces </Link>
-        </li>
-        <li>
-          <Link href="/favorites"> Favorites </Link>
-        </li>
-        <li>
-          <Link href="/comment"> Comment</Link>
-        </li>
-      </ul>
+import Link from "next/link"
+import styles from './Navbar.module.css'
+
+export default function Navbar () {
+return <>
+<div className={styles.Navbar}>
+ <Link href="/" style={{
+              textDecoration: 'none',
+              fontSize: 20,
+              color: 'white',
+            }}> Homepage </Link>
+ <Link href="/pieces" style={{
+              textDecoration: 'none',
+               fontSize: 20,
+                border: '1px',
+                color: 'white',
+            }}> Art Pieces </Link>
+ <Link href="/favorites" style={{
+              textDecoration: 'none',
+              fontSize: 20,
+              color: 'white',
+            }}> Favorites </Link>
+</div>
     </>
   );
 }

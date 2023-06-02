@@ -1,0 +1,14 @@
+.Navbar {
+display: flex; 
+flex-direction: row; 
+justify-content: space-around;
+position: fixed;
+bottom: 0;
+padding-block: 20px;
+margin-top: 20px;
+border: solid 1px #000;
+width: 100%;
+background-color: #000;
+opacity: 0.8;
+}
+
