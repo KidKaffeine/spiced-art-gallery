@@ -31,6 +31,7 @@ export default function ArtPieces({ pieces, handleFavorite, artPiecesInfo }) {
               id={element.slug}
             />
             <small role="small" className={styles.caption}>{element.name}</small>
+          <small>{element.year}</small>
           </li>
         ))}
       </ul>
