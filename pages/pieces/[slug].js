@@ -5,11 +5,17 @@ import Comment from "../../components/Comment";
 import Link from "next/link";
 import styles from '../../components/ArtPieces/ArtPieces.module.css'
 
-export default function ArtPieces({ pieces, handleFavorite, artPiecesInfo }) {
+export default function ArtPieces({
+  pieces,
+  handleComments,
+  handleFavorite,
+  artPiecesInfo,
+}) {
   const router = useRouter();
   const { slug } = router.query;
 
   const piece = pieces.filter((e) => e.slug === slug)[0];
+
   return (
     <div className={styles.singlePieceContainer}>
       <h1 className={styles.pieceHeader}>{piece.artist}</h1>
@@ -38,7 +44,7 @@ export default function ArtPieces({ pieces, handleFavorite, artPiecesInfo }) {
         color: 'black',
       }}>Back
       </Link>
-      <Comment slug={slug} artPiecesInfo={artPiecesInfo} />
+      <Comment slug={slug} artPiecesInfo={artPiecesInfo} handleComments={handleComments} />
     </div>
   );
 }

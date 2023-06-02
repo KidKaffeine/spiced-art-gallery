@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
   if (!data) return <div> No data</div>;
   if (error) return <div> Error</div>;
   if (isLoading) return <div> Is loading</div>;
-
+  
   function handleFavorite(slug) {
     setArtPiecesInfo((artPiecesInfo) => {
       const piece = artPiecesInfo.filter((piece) => piece.slug === slug)[0];
@@ -41,6 +41,8 @@ export default function App({ Component, pageProps }) {
       return [...artPiecesInfo, { slug, comments: [comment] }];
     });
   }
+  console.log(artPiecesInfo);
+
   return (
     <>
       <GlobalStyle />
