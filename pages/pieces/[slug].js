@@ -19,6 +19,14 @@ export default function ArtPieces({
   const piece = pieces.filter((e) => e.slug === slug)[0];
   return (
     <div className={styles.singlePieceContainer}>
+          <Link href="/" style={{
+        textDecoration: 'none',
+        color: 'black',
+        fontSize: '20px', 
+        marginTop: '20px',
+        border: '1px',
+      }}>Take me back
+      </Link>
       <h1 className={styles.pieceHeader}>{piece.artist}</h1>
       <div className={styles.singlePieceImage}>
       <Image
@@ -35,18 +43,7 @@ export default function ArtPieces({
         handleFavorite={handleFavorite}
         artPiecesInfo={artPiecesInfo}
       />
-      <Link href="/comment" style={{
-        textDecoration: 'none',
-        color: 'black',
-      }} >Add new comment
-      </Link>
-      <Link href="/" style={{
-        textDecoration: 'none',
-        color: 'black',
-      }}>Back
-      </Link>
       <Comment slug={slug} artPiecesInfo={artPiecesInfo} handleComments={handleComments}/>
-
     </div>
   );
 }
